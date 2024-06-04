@@ -1,0 +1,29 @@
+unit Uprincipal;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Layouts, FMX.Objects;
+
+type
+  TfrmLogin = class(TForm)
+    Layout1: TLayout;
+    StyleBook1: TStyleBook;
+    Panel1: TPanel;
+    Layout2: TLayout;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmLogin: TfrmLogin;
+
+implementation
+
+{$R *.fmx}
+
+end.

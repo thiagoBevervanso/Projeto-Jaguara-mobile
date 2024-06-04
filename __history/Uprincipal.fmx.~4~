@@ -1,0 +1,129 @@
+object frmLogin: TfrmLogin
+  Left = 0
+  Top = 0
+  Caption = 'login'
+  ClientHeight = 480
+  ClientWidth = 290
+  StyleBook = StyleBook1
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Layout1: TLayout
+    Align = Client
+    Size.Width = 290.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+  end
+  object Panel1: TPanel
+    Align = Contents
+    Size.Width = 290.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'Panel1Style1'
+    TabOrder = 2
+    object Layout2: TLayout
+      Align = Bottom
+      Position.Y = 148.000000000000000000
+      Size.Width = 290.000000000000000000
+      Size.Height = 212.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object Label1: TLabel
+        Align = Top
+        StyledSettings = [Family]
+        Size.Width = 290.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 18.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        TextSettings.FontColor = claWhite
+        TextSettings.HorzAlign = Center
+        Text = 'LOGIN'
+        TabOrder = 0
+      end
+      object Layout4: TLayout
+        Position.Y = 64.000000000000000000
+        Size.Width = 290.000000000000000000
+        Size.Height = 153.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object Label2: TLabel
+          Align = Top
+          StyledSettings = [Family]
+          Margins.Right = 110.000000000000000000
+          Size.Width = 180.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Center
+          Text = 'Usuario'
+          TabOrder = 0
+          object Label3: TLabel
+            StyledSettings = [Family]
+            Position.X = 64.000000000000000000
+            Position.Y = 55.000000000000000000
+            TextSettings.Font.Size = 16.000000000000000000
+            TextSettings.Font.StyleExt = {00060000000000000004000000}
+            TextSettings.FontColor = claWhite
+            Text = 'Senha'
+            TabOrder = 4
+          end
+        end
+        object Edit1: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 1
+          Position.X = 64.000000000000000000
+          Position.Y = 21.000000000000000000
+          Opacity = 0.600000023841857900
+          Size.Width = 185.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Edit2: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 2
+          Password = True
+          Position.X = 64.000000000000000000
+          Position.Y = 80.000000000000000000
+          Opacity = 0.600000023841857900
+          Size.Width = 185.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+    end
+    object Layout3: TLayout
+      Align = Bottom
+      Position.Y = 360.000000000000000000
+      Size.Width = 290.000000000000000000
+      Size.Height = 120.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+    end
+  end
+  object StyleBook1: TStyleBook
+    Styles = <
+      item
+      end
+      item
+        Platform = 'Windows 10 Desktop'
+        ResourcesBin = {
+          464D585F5354594C4520322E3501060C50616E656C315374796C653103100100
+          545046300A5452656374616E676C6500095374796C654E616D65060C50616E65
+          6C315374796C653105416C69676E070643656E7465720946696C6C2E4B696E64
+          07084772616469656E741446696C6C2E4772616469656E742E506F696E74730E
+          0105436F6C6F720708636C61426C61636B064F66667365740500000000000DF8
+          E4FB3F000105436F6C6F720709784646323530454545064F6666736574050000
+          000000000080FF3F00000748697454657374080A53697A652E57696474680500
+          0000000000009107400B53697A652E4865696768740500000000000000F00740
+          1453697A652E506C6174666F726D44656661756C74080C5374726F6B652E436F
+          6C6F7207097846464343434343430000}
+      end>
+    Left = 192
+    Top = 136
+  end
+end

@@ -1,0 +1,11 @@
+object frmGrid: TfrmGrid
+  Left = 0
+  Top = 0
+  Caption = 'J. Logistics'
+  ClientHeight = 480
+  ClientWidth = 290
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+end

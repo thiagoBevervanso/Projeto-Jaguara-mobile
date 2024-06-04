@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/06/03 20:59:50.000.878,=C:\Users\loboy\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/06/03 21:01:27.000.801,C:\Users\loboy\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=C:\prog\DELPHI\Projeto_Jaguara_Mobile\Uprincipal.pas</Transaction>
+    <Transaction>2024/06/03 21:01:27.000.801,C:\Users\loboy\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.fmx=C:\prog\DELPHI\Projeto_Jaguara_Mobile\Uprincipal.fmx</Transaction>
+    <Transaction>2024/06/03 21:01:47.000.276,C:\Users\loboy\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=C:\prog\DELPHI\Projeto_Jaguara_Mobile\Pprincipal.dproj</Transaction>
+    <Transaction>2024/06/03 21:56:37.408,=C:\prog\DELPHI\Projeto_Jaguara_Mobile\Unit1.pas</Transaction>
+    <Transaction>2024/06/03 21:58:06.560,C:\prog\DELPHI\Projeto_Jaguara_Mobile\UGrid_btns.pas=C:\prog\DELPHI\Projeto_Jaguara_Mobile\Unit1.pas</Transaction>
+    <Transaction>2024/06/03 21:58:06.560,C:\prog\DELPHI\Projeto_Jaguara_Mobile\UGrid_btns.fmx=C:\prog\DELPHI\Projeto_Jaguara_Mobile\Unit1.fmx</Transaction>
+  </Transactions>
+</BorlandProject>
