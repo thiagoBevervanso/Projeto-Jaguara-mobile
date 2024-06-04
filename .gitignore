@@ -1,0 +1,12 @@
+*.dcu
+*.~*
+*.#*
+*.ddp
+*.dsk
+*.cfg
+*.stat
+*.local
+*.tvsconfig
+__history/
+__recovery/
+__pycache__/
