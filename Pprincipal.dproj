@@ -191,8 +191,8 @@
             <Form>frmLogin</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="UGrid_btns.pas">
-            <Form>frmGrid</Form>
+        <DCCReference Include="UGrid_btn.pas">
+            <Form>frm_btns</Form>
             <FormType>fmx</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">

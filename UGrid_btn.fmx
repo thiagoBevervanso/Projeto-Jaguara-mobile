@@ -1,0 +1,215 @@
+object frm_btns: Tfrm_btns
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 294
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Panel1: TPanel
+    Align = Client
+    Cursor = crHandPoint
+    Size.Width = 294.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'panel1Style1'
+    TabOrder = 0
+    object btn_voltar: TSpeedButton
+      StyledSettings = [Family]
+      Position.X = 8.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 81.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'backtoolbutton'
+      Text = 'Sair'
+      TextSettings.Font.Size = 14.000000000000000000
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
+      TextSettings.FontColor = claWhite
+    end
+    object TabControl1: TTabControl
+      Position.Y = 58.000000000000000000
+      Size.Width = 294.000000000000000000
+      Size.Height = 422.000000000000000000
+      Size.PlatformDefault = False
+      TabIndex = 0
+      TabOrder = 1
+      TabPosition = None
+      Sizes = (
+        294s
+        422s
+        294s
+        422s
+        294s
+        422s
+        294s
+        422s
+        294s
+        422s
+        294s
+        422s)
+      object Tab_botoes: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = True
+        Size.Width = 8.000000000000000000
+        Size.Height = 8.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'Tab_botoes'
+        object Layout1: TLayout
+          Position.X = 20.000000000000000000
+          Position.Y = 32.000000000000000000
+          Size.Width = 249.000000000000000000
+          Size.Height = 281.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object btn_grid: TButton
+            Align = Top
+            StyledSettings = [Family, FontColor]
+            Size.Width = 249.000000000000000000
+            Size.Height = 33.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'btn_grids'
+            TabOrder = 0
+            Text = 'Grid'
+            TextSettings.Font.Size = 14.000000000000000000
+            TextSettings.Font.StyleExt = {00060000000000000004000000}
+          end
+          object btn_dashboard: TButton
+            Align = Top
+            StyledSettings = [Family, FontColor]
+            Margins.Top = 20.000000000000000000
+            Position.Y = 53.000000000000000000
+            Size.Width = 249.000000000000000000
+            Size.Height = 33.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'btn_grids'
+            TabOrder = 1
+            Text = 'DashBoard'
+            TextSettings.Font.Size = 14.000000000000000000
+            TextSettings.Font.StyleExt = {00060000000000000004000000}
+          end
+          object btn_temp: TButton
+            Align = Top
+            StyledSettings = [Family, FontColor]
+            Margins.Top = 20.000000000000000000
+            Position.Y = 106.000000000000000000
+            Size.Width = 249.000000000000000000
+            Size.Height = 33.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'btn_grids'
+            TabOrder = 2
+            Text = 'Temperatura'
+            TextSettings.Font.Size = 14.000000000000000000
+            TextSettings.Font.StyleExt = {00060000000000000004000000}
+          end
+          object btn_solicitacoes: TButton
+            Align = Top
+            StyledSettings = [Family, FontColor]
+            Margins.Top = 20.000000000000000000
+            Position.Y = 159.000000000000000000
+            Size.Width = 249.000000000000000000
+            Size.Height = 33.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'btn_grids'
+            TabOrder = 3
+            Text = 'Solicitacoes'
+            TextSettings.Font.Size = 14.000000000000000000
+            TextSettings.Font.StyleExt = {00060000000000000004000000}
+          end
+          object btn_veiculos: TButton
+            Align = Top
+            StyledSettings = [Family, FontColor]
+            Margins.Top = 20.000000000000000000
+            Position.Y = 212.000000000000000000
+            Size.Width = 249.000000000000000000
+            Size.Height = 33.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'btn_grids'
+            TabOrder = 4
+            Text = 'Veiculos'
+            TextSettings.Font.Size = 14.000000000000000000
+            TextSettings.Font.StyleExt = {00060000000000000004000000}
+          end
+        end
+        object Label4: TLabel
+          StyledSettings = [Family]
+          Position.X = 64.000000000000000000
+          Position.Y = 341.000000000000000000
+          Size.Width = 185.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000100000004000000}
+          TextSettings.FontColor = xFFCCC6C6
+          Text = 'Jaguara Logistics'
+          TabOrder = 2
+        end
+      end
+      object Tab_grid: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 8.000000000000000000
+        Size.Height = 8.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+      end
+      object Tab_dashboard: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 8.000000000000000000
+        Size.Height = 8.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'Tab_dashboard'
+      end
+      object Tab_temp: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 8.000000000000000000
+        Size.Height = 8.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'Tab_temp'
+      end
+      object Tab_veiculos: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 8.000000000000000000
+        Size.Height = 8.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'Tab_veiculos'
+      end
+      object Tab_solicitacoes: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 8.000000000000000000
+        Size.Height = 8.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'Tab_solicitacoes'
+      end
+    end
+  end
+end

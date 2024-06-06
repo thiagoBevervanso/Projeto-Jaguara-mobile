@@ -4,13 +4,13 @@ uses
   System.StartUpCopy,
   FMX.Forms,
   Uprincipal in 'Uprincipal.pas' {frmLogin},
-  UGrid_btns in 'UGrid_btns.pas' {frmGrid};
+  UGrid_btn in 'UGrid_btn.pas' {frm_btns};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.CreateForm(TfrmLogin, frmLogin);
-  Application.CreateForm(TfrmGrid, frmGrid);
+  Application.CreateForm(Tfrm_btns, frm_btns);
   Application.Run;
 end.
