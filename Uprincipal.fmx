@@ -1498,6 +1498,6 @@ object frmLogin: TfrmLogin
           0708636C615768697465000000}
       end>
     Left = 192
-    Top = 136
+    Top = 96
   end
 end

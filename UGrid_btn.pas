@@ -5,7 +5,8 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Layouts, FMX.Controls.Presentation, FMX.TabControl;
+  FMX.Layouts, FMX.Controls.Presentation, FMX.TabControl, FMX.ListView.Types,
+  FMX.ListView.Appearances, FMX.ListView.Adapters.Base, FMX.ListView;
 
 type
   Tfrm_btns = class(TForm)
@@ -25,6 +26,8 @@ type
     btn_solicitacoes: TButton;
     btn_veiculos: TButton;
     Label4: TLabel;
+    StyleBook1: TStyleBook;
+    ListView1: TListView;
   private
     { Private declarations }
   public
