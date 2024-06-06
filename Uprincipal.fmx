@@ -74,7 +74,7 @@ object frmLogin: TfrmLogin
             TextSettings.Font.StyleExt = {00060000000000000004000000}
             TextSettings.FontColor = claWhite
             Text = 'Senha'
-            TabOrder = 4
+            TabOrder = 3
           end
         end
         object edt_senha: TEdit
@@ -1503,6 +1503,7 @@ object frmLogin: TfrmLogin
   object FDConnection1: TFDConnection
     Params.Strings = (
       'Database=C:\prog\DELPHI\Projeto_Jaguara_Mobile\database'
+      'OpenMode=ReadWrite'
       'DriverID=SQLite')
     Left = 176
     Top = 112

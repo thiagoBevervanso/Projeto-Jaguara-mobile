@@ -91,6 +91,7 @@ implementation
 
 procedure Tfrm_btns.FormShow(Sender: TObject);
 begin
+ ShowMessage('isAdmin em FormShow: ' + BoolToStr(isAdmin, True)); // Log adicional
   btn_cadastrar.Visible := isAdmin;
 end;
 

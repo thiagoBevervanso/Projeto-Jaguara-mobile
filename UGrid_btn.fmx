@@ -8,7 +8,7 @@ object frm_btns: Tfrm_btns
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
-  DesignerMasterStyle = 3
+  DesignerMasterStyle = 0
   object Panel1: TPanel
     Align = Client
     Cursor = crHandPoint
@@ -36,7 +36,7 @@ object frm_btns: Tfrm_btns
       Size.Height = 422.000000000000000000
       Size.PlatformDefault = False
       TabHeight = 49.000000000000000000
-      TabIndex = 8
+      TabIndex = 0
       TabOrder = 1
       TabPosition = None
       Sizes = (
@@ -62,7 +62,7 @@ object frm_btns: Tfrm_btns
         CustomIcon = <
           item
           end>
-        IsSelected = False
+        IsSelected = True
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
@@ -315,6 +315,8 @@ object frm_btns: Tfrm_btns
         StyleLookup = ''
         TabOrder = 0
         Text = 'tab_cadastro'
+        ExplicitSize.cx = 8.000000000000000000
+        ExplicitSize.cy = 8.000000000000000000
         object Layout2: TLayout
           Align = Client
           Size.Width = 294.000000000000000000
@@ -442,6 +444,8 @@ object frm_btns: Tfrm_btns
         StyleLookup = ''
         TabOrder = 0
         Text = 'Tab_cadastroCarga'
+        ExplicitSize.cx = 8.000000000000000000
+        ExplicitSize.cy = 8.000000000000000000
         object Layout4: TLayout
           Align = Client
           Size.Width = 294.000000000000000000
@@ -599,13 +603,15 @@ object frm_btns: Tfrm_btns
         CustomIcon = <
           item
           end>
-        IsSelected = True
+        IsSelected = False
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = ''
         TabOrder = 0
         Text = 'TabItem1'
+        ExplicitSize.cx = 8.000000000000000000
+        ExplicitSize.cy = 8.000000000000000000
         object Layout5: TLayout
           Align = Client
           Size.Width = 294.000000000000000000
@@ -1085,6 +1091,7 @@ object frm_btns: Tfrm_btns
   object FDConnection1: TFDConnection
     Params.Strings = (
       'Database=C:\prog\DELPHI\Projeto_Jaguara_Mobile\database'
+      'OpenMode=ReadWrite'
       'DriverID=SQLite')
     Connected = True
     Left = 152

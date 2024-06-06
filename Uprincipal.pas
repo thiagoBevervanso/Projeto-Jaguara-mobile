@@ -40,7 +40,7 @@ type
     { Public declarations }
     usuarioLogado: string;
     senhaLogada: string;
-    isAdmin: Boolean  ;
+    isAdmin: Boolean;
   end;
 
 var
@@ -54,7 +54,23 @@ implementation
 
 procedure TfrmLogin.btn_loginClick(Sender: TObject);
 begin
-   if authenticadorUsuario(edt_usuario.Text, edt_senha.Text) then
+   // try
+   // if authenticadorUsuario(edt_usuario.Text, edt_senha.Text) then
+   // begin
+    //  navigateToMainForm;
+   // end
+   // else
+   // begin
+   //   ShowMessage('Login ou senha inválidos');
+   // end;
+  //except
+  //  on E: Exception do
+  //  begin
+   //   ShowMessage('Erro no processo de login: ' + E.Message);
+   // end;
+  //end;
+
+  if authenticadorUsuario(edt_usuario.Text, edt_senha.Text) then
    begin
     navigateToMainForm;
    end
@@ -67,43 +83,54 @@ end;
 
 procedure TfrmLogin.navigateToMainForm;
 begin
+
   Application.CreateForm(Tfrm_btns, frm_btns);
   frm_btns.usuarioLogado := usuarioLogado;
   frm_btns.senhaLogada := senhaLogada;
   frm_btns.isAdmin := isAdmin;
+   ShowMessage('Logado como: ' + usuarioLogado + ' | Admin: ' + BoolToStr(isAdmin, True)); // Log adicional
   frm_btns.Show;
-  Self.Close;
+  //Self.Close;
+
 end;
 
-function TfrmLogin.authenticadorUsuario(username, password: string): Boolean;
-  var
 
-    SQLQuery : TFDQuery;
+function TfrmLogin.authenticadorUsuario(username, password: string): Boolean;
 
   begin
 
 
     Result := False;
-    SQLQuery := TFDQuery.Create(nil);
+    //FDQuery1 := TFDQuery.Create(nil);
 
     try
-    SQLQuery.SQL.Text := 'SELECT is_adm FROM usuarios WHERE username = :username AND password = :password';
-    SQLQuery.Params.ParamByName('username').AsString := username;
-    SQLQuery.Params.ParamByName('password').AsString := password;
-    SQLQuery.Open;
-    if not SQLQuery.Eof then
+    FDConnection1.Connected := true;
+    FDQuery1.Close;
+    FDQuery1.SQL.Text := 'SELECT is_adm FROM usuarios WHERE username = :username AND password = :password';
+    FDQuery1.Params.ParamByName('username').AsString := username;
+    FDQuery1.Params.ParamByName('password').AsString := password;
+    FDQuery1.Open;
+
+    if not FDQuery1.Eof then
       begin
-        isAdmin := SQLQuery.FieldByName('is_adm').AsBoolean;
+        isAdmin := FDQuery1.FieldByName('is_adm').AsBoolean;
         Result := True;
         usuarioLogado :=username;
         senhaLogada := password;
+        ShowMessage('Usuário autenticado: ' + usuarioLogado + ' | isAdmin: ' + BoolToStr(isAdmin, True)); // Log adicional
+
       end;
-
-    finally
-    SQLQuery.Free;
-
+      except
+    on E: Exception do
+    begin
+      ShowMessage('Erro ao autenticar usuário: ' + E.Message);
     end;
+   end;
+
+
+
   end;
+
 
 
 
