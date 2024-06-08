@@ -1,14 +1,14 @@
 object frm_btns: Tfrm_btns
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'cadastros'
   ClientHeight = 480
   ClientWidth = 294
   StyleBook = StyleBook1
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
-  DesignerMasterStyle = 0
+  DesignerMasterStyle = 3
   object Panel1: TPanel
     Align = Client
     Cursor = crHandPoint
@@ -29,6 +29,7 @@ object frm_btns: Tfrm_btns
       TextSettings.Font.Size = 14.000000000000000000
       TextSettings.Font.StyleExt = {00060000000000000004000000}
       TextSettings.FontColor = claWhite
+      OnClick = btn_voltarClick
     end
     object TabControl1: TTabControl
       Position.Y = 58.000000000000000000
@@ -40,14 +41,6 @@ object frm_btns: Tfrm_btns
       TabOrder = 1
       TabPosition = None
       Sizes = (
-        294s
-        422s
-        294s
-        422s
-        294s
-        422s
-        294s
-        422s
         294s
         422s
         294s
@@ -89,6 +82,7 @@ object frm_btns: Tfrm_btns
             Text = 'Grid'
             TextSettings.Font.Size = 14.000000000000000000
             TextSettings.Font.StyleExt = {00060000000000000004000000}
+            OnClick = btn_gridClick
           end
           object btn_dashboard: TButton
             Align = Top
@@ -103,6 +97,7 @@ object frm_btns: Tfrm_btns
             Text = 'DashBoard'
             TextSettings.Font.Size = 14.000000000000000000
             TextSettings.Font.StyleExt = {00060000000000000004000000}
+            OnClick = btn_dashboardClick
           end
           object btn_temp: TButton
             Align = Top
@@ -117,6 +112,7 @@ object frm_btns: Tfrm_btns
             Text = 'Temperatura'
             TextSettings.Font.Size = 14.000000000000000000
             TextSettings.Font.StyleExt = {00060000000000000004000000}
+            OnClick = btn_tempClick
           end
           object btn_solicitacoes: TButton
             Align = Top
@@ -131,6 +127,7 @@ object frm_btns: Tfrm_btns
             Text = 'Solicitacoes'
             TextSettings.Font.Size = 14.000000000000000000
             TextSettings.Font.StyleExt = {00060000000000000004000000}
+            OnClick = btn_solicitacoesClick
           end
           object btn_veiculos: TButton
             Align = Top
@@ -145,6 +142,7 @@ object frm_btns: Tfrm_btns
             Text = 'Veiculos'
             TextSettings.Font.Size = 14.000000000000000000
             TextSettings.Font.StyleExt = {00060000000000000004000000}
+            OnClick = btn_veiculosClick
           end
           object btn_cadastrar: TButton
             Align = Top
@@ -159,6 +157,7 @@ object frm_btns: Tfrm_btns
             Text = 'Cadastrar'
             TextSettings.Font.Size = 14.000000000000000000
             TextSettings.Font.StyleExt = {00060000000000000004000000}
+            OnClick = btn_cadastrarClick
           end
         end
         object Label4: TLabel
@@ -192,9 +191,9 @@ object frm_btns: Tfrm_btns
           ItemEditAppearanceClassName = 'TDynamicAppearance'
           HeaderAppearanceClassName = 'TListHeaderObjects'
           FooterAppearanceClassName = 'TListHeaderObjects'
-          Align = Client
+          Position.Y = 40.000000000000000000
           Size.Width = 294.000000000000000000
-          Size.Height = 422.000000000000000000
+          Size.Height = 382.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
           ItemAppearance.ItemHeight = 70
@@ -247,6 +246,22 @@ object frm_btns: Tfrm_btns
               AppearanceClassName = 'TTextObjectAppearance'
             end>
         end
+        object btn_atualiza_grid: TSpeedButton
+          Position.X = 246.000000000000000000
+          Size.Width = 48.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'refreshtoolbutton'
+          Text = 'btn_atualiza_grid'
+        end
+        object btn_edita_grid: TSpeedButton
+          Position.X = 8.000000000000000000
+          Size.Width = 48.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'composetoolbutton'
+          Text = 'btn_edita_grid'
+        end
       end
       object Tab_dashboard: TTabItem
         CustomIcon = <
@@ -289,394 +304,6 @@ object frm_btns: Tfrm_btns
         Text = 'Tab_veiculos'
         ExplicitSize.cx = 8.000000000000000000
         ExplicitSize.cy = 8.000000000000000000
-      end
-      object Tab_solicitacoes: TTabItem
-        CustomIcon = <
-          item
-          end>
-        IsSelected = False
-        Size.Width = 8.000000000000000000
-        Size.Height = 8.000000000000000000
-        Size.PlatformDefault = False
-        StyleLookup = ''
-        TabOrder = 0
-        Text = 'Tab_solicitacoes'
-        ExplicitSize.cx = 8.000000000000000000
-        ExplicitSize.cy = 8.000000000000000000
-      end
-      object tab_cadastro: TTabItem
-        CustomIcon = <
-          item
-          end>
-        IsSelected = False
-        Size.Width = 8.000000000000000000
-        Size.Height = 8.000000000000000000
-        Size.PlatformDefault = False
-        StyleLookup = ''
-        TabOrder = 0
-        Text = 'tab_cadastro'
-        ExplicitSize.cx = 8.000000000000000000
-        ExplicitSize.cy = 8.000000000000000000
-        object Layout2: TLayout
-          Align = Client
-          Size.Width = 294.000000000000000000
-          Size.Height = 422.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 0
-          object Layout3: TLayout
-            Align = Top
-            Size.Width = 294.000000000000000000
-            Size.Height = 50.000000000000000000
-            Size.PlatformDefault = False
-            TabOrder = 0
-            object Label1: TLabel
-              Align = Center
-              StyledSettings = [Family]
-              Size.Width = 145.000000000000000000
-              Size.Height = 23.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 16.000000000000000000
-              TextSettings.Font.StyleExt = {00060000000000000004000000}
-              TextSettings.FontColor = claWhite
-              TextSettings.HorzAlign = Center
-              Text = 'Cadastro Cliente'
-              TabOrder = 0
-            end
-          end
-          object Label2: TLabel
-            Align = Top
-            StyledSettings = [Family]
-            Position.Y = 50.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 31.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
-            TextSettings.Font.StyleExt = {00060000000000000004000000}
-            TextSettings.FontColor = claWhite
-            Text = 'Nome: '
-            TabOrder = 1
-          end
-          object Edit1: TEdit
-            Touch.InteractiveGestures = [LongTap, DoubleTap]
-            Align = Top
-            TabOrder = 2
-            Position.Y = 81.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 32.000000000000000000
-            Size.PlatformDefault = False
-          end
-          object Label3: TLabel
-            Align = Top
-            StyledSettings = [Family]
-            Position.Y = 113.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 23.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
-            TextSettings.Font.StyleExt = {00060000000000000004000000}
-            TextSettings.FontColor = claWhite
-            Text = 'Codigo:'
-            TabOrder = 3
-          end
-          object Edit2: TEdit
-            Touch.InteractiveGestures = [LongTap, DoubleTap]
-            Align = Top
-            TabOrder = 4
-            Position.Y = 136.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 32.000000000000000000
-            Size.PlatformDefault = False
-          end
-          object Label5: TLabel
-            Align = Top
-            StyledSettings = [Family]
-            Position.Y = 168.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 23.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
-            TextSettings.Font.StyleExt = {00060000000000000004000000}
-            TextSettings.FontColor = claWhite
-            Text = 'email:'
-            TabOrder = 5
-          end
-          object Edit3: TEdit
-            Touch.InteractiveGestures = [LongTap, DoubleTap]
-            Align = Top
-            TabOrder = 6
-            Position.Y = 191.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 32.000000000000000000
-            Size.PlatformDefault = False
-          end
-          object Label6: TLabel
-            Align = Top
-            StyledSettings = [Family]
-            Position.Y = 223.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 23.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
-            TextSettings.Font.StyleExt = {00060000000000000004000000}
-            TextSettings.FontColor = claWhite
-            Text = 'CNPJ:'
-            TabOrder = 7
-          end
-          object Edit4: TEdit
-            Touch.InteractiveGestures = [LongTap, DoubleTap]
-            Align = Top
-            TabOrder = 8
-            Position.Y = 246.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 32.000000000000000000
-            Size.PlatformDefault = False
-          end
-        end
-      end
-      object Tab_cadastroCarga: TTabItem
-        CustomIcon = <
-          item
-          end>
-        IsSelected = False
-        Size.Width = 8.000000000000000000
-        Size.Height = 8.000000000000000000
-        Size.PlatformDefault = False
-        StyleLookup = ''
-        TabOrder = 0
-        Text = 'Tab_cadastroCarga'
-        ExplicitSize.cx = 8.000000000000000000
-        ExplicitSize.cy = 8.000000000000000000
-        object Layout4: TLayout
-          Align = Client
-          Size.Width = 294.000000000000000000
-          Size.Height = 422.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 0
-          object Label7: TLabel
-            Align = Top
-            StyledSettings = [Family]
-            Size.Width = 294.000000000000000000
-            Size.Height = 33.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
-            TextSettings.Font.StyleExt = {00060000000000000004000000}
-            TextSettings.FontColor = claWhite
-            TextSettings.HorzAlign = Center
-            Text = 'Cadastro de cargas'
-            TabOrder = 0
-          end
-          object Label8: TLabel
-            Align = Top
-            StyledSettings = [Family]
-            Position.Y = 33.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 23.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
-            TextSettings.Font.StyleExt = {00060000000000000004000000}
-            TextSettings.FontColor = claWhite
-            Text = 'Viagem'
-            TabOrder = 1
-          end
-          object Edit5: TEdit
-            Touch.InteractiveGestures = [LongTap, DoubleTap]
-            Align = Top
-            TabOrder = 2
-            Position.Y = 56.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 32.000000000000000000
-            Size.PlatformDefault = False
-          end
-          object Label9: TLabel
-            Align = Top
-            StyledSettings = [Family]
-            Position.Y = 88.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 23.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
-            TextSettings.Font.StyleExt = {00060000000000000004000000}
-            TextSettings.FontColor = claWhite
-            Text = 'Veiculo'
-            TabOrder = 3
-          end
-          object Edit6: TEdit
-            Touch.InteractiveGestures = [LongTap, DoubleTap]
-            Align = Top
-            TabOrder = 4
-            Position.Y = 111.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 32.000000000000000000
-            Size.PlatformDefault = False
-          end
-          object Label10: TLabel
-            Align = Top
-            StyledSettings = [Family]
-            Position.Y = 143.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 23.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
-            TextSettings.Font.StyleExt = {00060000000000000004000000}
-            TextSettings.FontColor = claWhite
-            Text = 'Transportadora'
-            TabOrder = 5
-          end
-          object Edit7: TEdit
-            Touch.InteractiveGestures = [LongTap, DoubleTap]
-            Align = Top
-            TabOrder = 6
-            Position.Y = 166.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 32.000000000000000000
-            Size.PlatformDefault = False
-          end
-          object Label11: TLabel
-            Align = Top
-            StyledSettings = [Family]
-            Position.Y = 198.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 23.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
-            TextSettings.Font.StyleExt = {00060000000000000004000000}
-            TextSettings.FontColor = claWhite
-            Text = 'Status'
-            TabOrder = 7
-          end
-          object Edit8: TEdit
-            Touch.InteractiveGestures = [LongTap, DoubleTap]
-            Align = Top
-            TabOrder = 8
-            Position.Y = 221.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 32.000000000000000000
-            Size.PlatformDefault = False
-          end
-          object Label12: TLabel
-            Align = Top
-            StyledSettings = [Family]
-            Position.Y = 253.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 23.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
-            TextSettings.Font.StyleExt = {00060000000000000004000000}
-            TextSettings.FontColor = claWhite
-            Text = 'Temperatura'
-            TabOrder = 9
-          end
-          object Edit9: TEdit
-            Touch.InteractiveGestures = [LongTap, DoubleTap]
-            Align = Top
-            TabOrder = 10
-            Position.Y = 276.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 32.000000000000000000
-            Size.PlatformDefault = False
-          end
-          object Label13: TLabel
-            Align = Top
-            StyledSettings = [Family]
-            Position.Y = 308.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 23.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
-            TextSettings.Font.StyleExt = {00060000000000000004000000}
-            TextSettings.FontColor = claWhite
-            Text = 'Andamento'
-            TabOrder = 11
-          end
-          object Edit10: TEdit
-            Touch.InteractiveGestures = [LongTap, DoubleTap]
-            Align = Top
-            TabOrder = 12
-            Position.Y = 331.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 32.000000000000000000
-            Size.PlatformDefault = False
-          end
-        end
-      end
-      object TabItem1: TTabItem
-        CustomIcon = <
-          item
-          end>
-        IsSelected = False
-        Size.Width = 8.000000000000000000
-        Size.Height = 8.000000000000000000
-        Size.PlatformDefault = False
-        StyleLookup = ''
-        TabOrder = 0
-        Text = 'TabItem1'
-        ExplicitSize.cx = 8.000000000000000000
-        ExplicitSize.cy = 8.000000000000000000
-        object Layout5: TLayout
-          Align = Client
-          Size.Width = 294.000000000000000000
-          Size.Height = 422.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 0
-          object Button1: TButton
-            Align = Top
-            StyledSettings = [Family]
-            Size.Width = 294.000000000000000000
-            Size.Height = 44.000000000000000000
-            Size.PlatformDefault = False
-            StyleLookup = 'btn_blue'
-            TabOrder = 0
-            Text = 'Cadastar Clientes'
-            TextSettings.Font.Size = 16.000000000000000000
-            TextSettings.Font.StyleExt = {00060000000000000004000000}
-            TextSettings.FontColor = claWhite
-          end
-          object Button2: TButton
-            Align = Top
-            StyledSettings = [Family]
-            Margins.Top = 20.000000000000000000
-            Position.Y = 64.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 44.000000000000000000
-            Size.PlatformDefault = False
-            StyleLookup = 'btn_blue'
-            TabOrder = 1
-            Text = 'Cadastar Usuarios'
-            TextSettings.Font.Size = 16.000000000000000000
-            TextSettings.Font.StyleExt = {00060000000000000004000000}
-            TextSettings.FontColor = claWhite
-          end
-          object Button3: TButton
-            Align = Top
-            StyledSettings = [Family]
-            Margins.Top = 20.000000000000000000
-            Position.Y = 128.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 44.000000000000000000
-            Size.PlatformDefault = False
-            StyleLookup = 'btn_blue'
-            TabOrder = 2
-            Text = 'Cadastrar Cargas'
-            TextSettings.Font.Size = 16.000000000000000000
-            TextSettings.Font.StyleExt = {00060000000000000004000000}
-            TextSettings.FontColor = claWhite
-          end
-          object Button4: TButton
-            Align = Top
-            StyledSettings = [Family]
-            Margins.Top = 20.000000000000000000
-            Position.Y = 192.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 44.000000000000000000
-            Size.PlatformDefault = False
-            StyleLookup = 'btn_blue'
-            TabOrder = 3
-            Text = 'Cadastar Veiculos'
-            TextSettings.Font.Size = 16.000000000000000000
-            TextSettings.Font.StyleExt = {00060000000000000004000000}
-            TextSettings.FontColor = claWhite
-          end
-        end
       end
     end
   end
@@ -1077,7 +704,7 @@ object frm_btns: Tfrm_btns
           6E732E4C656674050000000000000080FF3F0B4D617267696E732E546F700500
           0000000000008000400D4D617267696E732E5269676874050000000000000080
           FF3F0E4D617267696E732E426F74746F6D05000000000000008000400A53697A
-          652E57696474680500000000000000E306400B53697A652E4865696768740500
+          652E57696474680500000000000000F706400B53697A652E4865696768740500
           000000000000E803401453697A652E506C6174666F726D44656661756C740804
           54657874060454657874165465787453657474696E67732E466F6E74436F6C6F
           720708636C6157686974650D536861646F7756697369626C650808486F74436F

@@ -197,6 +197,10 @@
             <Form>frm_btns</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="UCadastro.pas">
+            <Form>frmCadastro</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

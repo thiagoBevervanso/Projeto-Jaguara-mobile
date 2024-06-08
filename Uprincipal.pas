@@ -54,21 +54,6 @@ implementation
 
 procedure TfrmLogin.btn_loginClick(Sender: TObject);
 begin
-   // try
-   // if authenticadorUsuario(edt_usuario.Text, edt_senha.Text) then
-   // begin
-    //  navigateToMainForm;
-   // end
-   // else
-   // begin
-   //   ShowMessage('Login ou senha inválidos');
-   // end;
-  //except
-  //  on E: Exception do
-  //  begin
-   //   ShowMessage('Erro no processo de login: ' + E.Message);
-   // end;
-  //end;
 
   if authenticadorUsuario(edt_usuario.Text, edt_senha.Text) then
    begin
@@ -85,12 +70,10 @@ procedure TfrmLogin.navigateToMainForm;
 begin
 
   Application.CreateForm(Tfrm_btns, frm_btns);
-  frm_btns.usuarioLogado := usuarioLogado;
-  frm_btns.senhaLogada := senhaLogada;
-  frm_btns.isAdmin := isAdmin;
+ frm_btns.senhaLogada := senhaLogada;
+ frm_btns.isAdmin := isAdmin;
    ShowMessage('Logado como: ' + usuarioLogado + ' | Admin: ' + BoolToStr(isAdmin, True)); // Log adicional
   frm_btns.Show;
-  //Self.Close;
 
 end;
 
@@ -101,7 +84,7 @@ function TfrmLogin.authenticadorUsuario(username, password: string): Boolean;
 
 
     Result := False;
-    //FDQuery1 := TFDQuery.Create(nil);
+
 
     try
     FDConnection1.Connected := true;
