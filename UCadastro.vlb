@@ -22,9 +22,6 @@ Coordinates=341,434,44,58
 [tab_cadastro_veiculo]
 Coordinates=563,638,136,36
 
-[Check_adm]
-Coordinates=732,502,83,58
-
 [Tab_cadastroCarga]
 Coordinates=425,638,128,36
 
@@ -178,9 +175,6 @@ Coordinates=699,298,59,58
 [Edit5]
 Coordinates=1176,502,44,58
 
-[Label17]
-Coordinates=1163,366,60,58
-
 [edt_senha_user]
 Coordinates=546,502,106,58
 
@@ -214,9 +208,6 @@ Coordinates=176,366,129,58
 [Label11]
 Coordinates=811,366,60,58
 
-[check_edita_adm]
-Coordinates=80,298,115,58
-
 [Label29]
 Coordinates=430,10,60,58
 
@@ -238,9 +229,6 @@ Coordinates=768,298,151,58
 [Label28]
 Coordinates=778,10,60,58
 
-[Label30]
-Coordinates=274,298,60,58
-
 [lvUser]
 Coordinates=127,10,107,168
 Visible=True
@@ -261,5 +249,5 @@ Coordinates=244,10,115,58
 Coordinates=918,10,140,58
 
 []
-Coordinates=10,366,156,58
+Coordinates=80,298,115,58
 

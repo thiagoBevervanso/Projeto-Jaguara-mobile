@@ -23,7 +23,7 @@ type
     Tuser = record
       codigo : integer;
       username, password : string;
-      is_adm : Boolean;
+
     end;
 
   TfrmCadastro = class(TForm)
@@ -71,7 +71,6 @@ type
     edt_nome_user: TEdit;
     Label16: TLabel;
     edt_senha_user: TEdit;
-    Label17: TLabel;
     Layout6: TLayout;
     Label20: TLabel;
     Label21: TLabel;
@@ -80,7 +79,6 @@ type
     Edit18: TEdit;
     Label23: TLabel;
     Edit19: TEdit;
-    Check_adm: TCheckBox;
     btn_salvar_cad_user: TButton;
     btn_salvar_cliente: TButton;
     Button6: TButton;
@@ -109,8 +107,6 @@ type
     Edt_edita_user_name: TEdit;
     Label29: TLabel;
     edt_edita_user_senha: TEdit;
-    Label30: TLabel;
-    check_edita_adm: TCheckBox;
     btn_salvar_edit_usuario: TButton;
     btn_deletar_usuario: TSpeedButton;
     lvUser: TListView;
@@ -466,7 +462,7 @@ begin
 
   FDQuery1.Close;
   FDQuery1.SQL.Clear;
-  FDQuery1.SQL.Add('INSERT INTO USUARIOS (codigo, username, password ');
+  FDQuery1.SQL.Add('INSERT INTO USUARIOS (codigo, username, password) ');
   FDQuery1.SQL.Add('VALUES (:codigo, :username, :password)');
   FDQuery1.ParamByName('codigo').AsInteger := user.codigo;
   FDQuery1.ParamByName('username').AsString := user.username;

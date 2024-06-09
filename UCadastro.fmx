@@ -36,7 +36,7 @@ object frmCadastro: TfrmCadastro
       Size.Height = 422.000000000000000000
       Size.PlatformDefault = False
       TabHeight = 49.000000000000000000
-      TabIndex = 6
+      TabIndex = 3
       TabOrder = 1
       TabPosition = None
       Sizes = (
@@ -458,7 +458,7 @@ object frmCadastro: TfrmCadastro
         CustomIcon = <
           item
           end>
-        IsSelected = False
+        IsSelected = True
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
@@ -549,32 +549,6 @@ object frmCadastro: TfrmCadastro
             Size.Height = 32.000000000000000000
             Size.PlatformDefault = False
           end
-          object Label17: TLabel
-            Align = Top
-            StyledSettings = [Family]
-            Position.Y = 198.000000000000000000
-            Size.Width = 294.000000000000000000
-            Size.Height = 23.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
-            TextSettings.Font.StyleExt = {00060000000000000004000000}
-            Text = 'o usuario eh administrador?'
-            TabOrder = 7
-          end
-          object Check_adm: TCheckBox
-            Cursor = crHandPoint
-            StyledSettings = [Family]
-            Position.X = 8.000000000000000000
-            Position.Y = 229.000000000000000000
-            Size.Width = 73.000000000000000000
-            Size.Height = 19.000000000000000000
-            Size.PlatformDefault = False
-            TabOrder = 8
-            Text = 'Sim'
-            TextSettings.Font.Size = 14.000000000000000000
-            TextSettings.Font.StyleExt = {00060000000000000004000000}
-            TextSettings.FontColor = claWhite
-          end
           object btn_salvar_cad_user: TButton
             Align = Top
             StyledSettings = [Family, FontColor]
@@ -582,12 +556,12 @@ object frmCadastro: TfrmCadastro
             Margins.Top = 60.000000000000000000
             Margins.Right = 50.000000000000000000
             Position.X = 80.000000000000000000
-            Position.Y = 281.000000000000000000
+            Position.Y = 258.000000000000000000
             Size.Width = 164.000000000000000000
             Size.Height = 44.000000000000000000
             Size.PlatformDefault = False
             StyleLookup = 'btn_blue'
-            TabOrder = 9
+            TabOrder = 7
             Text = 'Salvar'
             TextSettings.Font.Size = 14.000000000000000000
             TextSettings.Font.StyleExt = {00060000000000000004000000}
@@ -595,7 +569,7 @@ object frmCadastro: TfrmCadastro
           end
           object btn_edita_user: TSpeedButton
             Position.X = 8.000000000000000000
-            Position.Y = 281.000000000000000000
+            Position.Y = 254.000000000000000000
             Size.Width = 48.000000000000000000
             Size.Height = 48.000000000000000000
             Size.PlatformDefault = False
@@ -1321,7 +1295,7 @@ object frmCadastro: TfrmCadastro
         CustomIcon = <
           item
           end>
-        IsSelected = True
+        IsSelected = False
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
@@ -1562,29 +1536,6 @@ object frmCadastro: TfrmCadastro
           Size.Height = 32.000000000000000000
           Size.PlatformDefault = False
         end
-        object Label30: TLabel
-          Align = Top
-          StyledSettings = [Family, FontColor]
-          Margins.Left = 20.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 188.000000000000000000
-          Size.Width = 274.000000000000000000
-          Size.Height = 23.000000000000000000
-          Size.PlatformDefault = False
-          TextSettings.Font.Size = 14.000000000000000000
-          TextSettings.Font.StyleExt = {00060000000000000004000000}
-          Text = 'o usuario eh administrador?'
-          TabOrder = 7
-        end
-        object check_edita_adm: TCheckBox
-          StyledSettings = [Family, FontColor]
-          Position.X = 20.000000000000000000
-          Position.Y = 224.000000000000000000
-          TabOrder = 8
-          Text = 'sim'
-          TextSettings.Font.Size = 14.000000000000000000
-          TextSettings.Font.StyleExt = {00060000000000000004000000}
-        end
         object btn_salvar_edit_usuario: TButton
           Align = Top
           Enabled = False
@@ -1593,12 +1544,12 @@ object frmCadastro: TfrmCadastro
           Margins.Top = 50.000000000000000000
           Margins.Right = 50.000000000000000000
           Position.X = 80.000000000000000000
-          Position.Y = 261.000000000000000000
+          Position.Y = 238.000000000000000000
           Size.Width = 164.000000000000000000
           Size.Height = 44.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'btn_blue'
-          TabOrder = 9
+          TabOrder = 7
           Text = 'Salvar'
           TextSettings.Font.Size = 14.000000000000000000
           TextSettings.Font.StyleExt = {00060000000000000004000000}
@@ -1606,7 +1557,7 @@ object frmCadastro: TfrmCadastro
         end
         object btn_deletar_usuario: TSpeedButton
           Position.X = 8.000000000000000000
-          Position.Y = 261.000000000000000000
+          Position.Y = 234.000000000000000000
           Size.Width = 48.000000000000000000
           Size.Height = 48.000000000000000000
           Size.PlatformDefault = False
