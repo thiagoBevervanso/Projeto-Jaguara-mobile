@@ -8,7 +8,7 @@ object frmLogin: TfrmLogin
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
-  DesignerMasterStyle = 3
+  DesignerMasterStyle = 0
   object Layout1: TLayout
     Align = Client
     Size.Width = 294.000000000000000000
@@ -1505,6 +1505,8 @@ object frmLogin: TfrmLogin
       'Database=C:\prog\DELPHI\Projeto_Jaguara_Mobile\database'
       'OpenMode=ReadWrite'
       'DriverID=SQLite')
+    AfterConnect = FDConnection1AfterConnect
+    BeforeConnect = FDConnection1BeforeConnect
     Left = 176
     Top = 112
   end

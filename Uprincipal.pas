@@ -32,6 +32,8 @@ type
     FDConnection1: TFDConnection;
     FDQuery1: TFDQuery;
     procedure btn_loginClick(Sender: TObject);
+    procedure FDConnection1BeforeConnect(Sender: TObject);
+    procedure FDConnection1AfterConnect(Sender: TObject);
   private
     { Private declarations }
     function authenticadorUsuario(username, password: string): Boolean;
@@ -51,6 +53,7 @@ var
 implementation
 
 {$R *.fmx}
+uses  System.IOUtils;
 
 procedure TfrmLogin.btn_loginClick(Sender: TObject);
 begin
@@ -64,6 +67,20 @@ begin
      ShowMessage('Login ou senha invalidos');
    end;
 
+end;
+
+procedure TfrmLogin.FDConnection1AfterConnect(Sender: TObject);
+begin
+    FDConnection1.ExecSQL('CREATE TABLE IF NOT EXISTS Item (ShopItem  TEXT NOT NULL)');
+end;
+
+procedure TfrmLogin.FDConnection1BeforeConnect(Sender: TObject);
+begin
+       {$IF DEFINED(iOS) or DEFINED(ANDROID)}
+  FDConnection1.Params.Values['Database'] :=
+      TPath.Combine(TPath.GetDocumentsPath, 'shoplist.s3db');
+
+  {$ENDIF}
 end;
 
 procedure TfrmLogin.navigateToMainForm;
