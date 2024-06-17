@@ -25,6 +25,13 @@ type
       username, password : string;
 
     end;
+    Tcarga = record
+      viagem, temperatura,veiculo,transportadora,status : string;
+    end;
+    Tveiculo = record
+      id_veiculo : integer;
+      nome, placa : string;
+    end;
 
   TfrmCadastro = class(TForm)
     Panel1: TPanel;
@@ -46,15 +53,15 @@ type
     Layout4: TLayout;
     Label7: TLabel;
     Label8: TLabel;
-    Edit5: TEdit;
+    edt_viagem: TEdit;
     Label9: TLabel;
-    Edit6: TEdit;
+    edt_veiculo: TEdit;
     Label10: TLabel;
-    Edit7: TEdit;
+    Edt_trans: TEdit;
     Label11: TLabel;
-    Edit8: TEdit;
+    edt_status: TEdit;
     Label12: TLabel;
-    Edit9: TEdit;
+    edt_temp_carga: TEdit;
     Tab_cadastros: TTabItem;
     Layout5: TLayout;
     Button1: TButton;
@@ -74,15 +81,15 @@ type
     Layout6: TLayout;
     Label20: TLabel;
     Label21: TLabel;
-    Edit17: TEdit;
+    edt_cod_veiculo: TEdit;
     Label22: TLabel;
-    Edit18: TEdit;
+    edt_nome_veiculo: TEdit;
     Label23: TLabel;
-    Edit19: TEdit;
+    edt_placa_veiculo: TEdit;
     btn_salvar_cad_user: TButton;
     btn_salvar_cliente: TButton;
-    Button6: TButton;
-    Button7: TButton;
+    btn_salvar_veiculo: TButton;
+    btn_cadastro_carga: TButton;
     SpeedButton1: TSpeedButton;
     FDConnection1: TFDConnection;
     FDQuery1: TFDQuery;
@@ -121,6 +128,14 @@ type
     Label25: TLabel;
     edit_edita_cliente_cnpj: TEdit;
     btn_salvar_edit_cliente: TButton;
+    tab_view_cargas: TTabItem;
+    tab_view_veiculos: TTabItem;
+    btn_edita_carga: TSpeedButton;
+    ListViewcarga: TListView;
+    btn_atualiza_carga: TSpeedButton;
+    btn_opt_veiculos: TSpeedButton;
+    ListView2: TListView;
+    btn_atualiza_veiculo: TSpeedButton;
     procedure Button1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -151,6 +166,16 @@ type
     procedure editaUsuarioBanco(usuario : TUser);
     procedure btn_atualiza_userClick(Sender: TObject);
     procedure btn_edita_userClick(Sender: TObject);
+    procedure insereCargaLista(carga :Tcarga);
+
+    procedure insereCargaBD(carga : Tcarga);
+    function  buscarCargaBD(id_banco : string) : Tcarga;
+    procedure atualizaCargaBanco();
+
+    procedure insereVeiculoBD(veiculo : Tveiculo);
+    procedure atualizaVeiculos_bd();
+    procedure insereVeiculoLista(veiculo : Tveiculo);
+    function buscarVeiculoBD(id_vei : integer) : Tveiculo;
 
      procedure lvUserItemClickEx(const Sender: TObject; ItemIndex: Integer;
       const LocalClickPos: TPointF; const ItemObject: TListItemDrawable);
@@ -159,6 +184,12 @@ type
 
     const LocalClickPos: TPointF; const ItemObject: TListItemDrawable);
     procedure deleta_usuarios(id_usuario: integer);
+    procedure btn_cadastro_cargaClick(Sender: TObject);
+    procedure btn_atualiza_cargaClick(Sender: TObject);
+    procedure btn_edita_cargaClick(Sender: TObject);
+    procedure btn_salvar_veiculoClick(Sender: TObject);
+    procedure btn_atualiza_veiculoClick(Sender: TObject);
+    procedure btn_opt_veiculosClick(Sender: TObject);
 
   private
 
@@ -178,6 +209,28 @@ implementation
 procedure TfrmCadastro.btn_voltarClick(Sender: TObject);
 begin
    Self.Close;
+end;
+
+function TfrmCadastro.buscarCargaBD(id_banco: string): Tcarga;
+var vCarga : Tcarga;
+begin
+
+FDQuery1.Close;
+FDQuery1.SQL.Clear;
+
+FDQuery1.SQL.Add('select * from carga ');
+FDQuery1.SQL.Add('where viagem = :viagem');
+FDQuery1.ParamByName('viagem').AsString := id_banco;
+
+FDQuery1.Open();
+
+vCarga.viagem := id_banco;
+vCarga.veiculo := FDQuery1.FieldByName('veiculo').AsString;
+vCarga.temperatura := FDQuery1.FieldByName('temperatura').AsString;
+vCarga.transportadora := FDQuery1.FieldByName('transportadora').AsString;
+vCarga.status := FDQuery1.FieldByName('status').AsString;
+
+Result := vCarga;
 end;
 
 function TfrmCadastro.buscarClienteBD(id_cliente: integer): TCliente;
@@ -218,6 +271,24 @@ begin
   Result := vUser;
 end;
 
+function TfrmCadastro.buscarVeiculoBD(id_vei: integer): Tveiculo;
+var iveiculo : Tveiculo;
+begin
+  FDQuery1.Close;
+  FDQuery1.SQL.Clear;
+  FDQuery1.SQL.Add('select * from veiculo');
+  FDQuery1.SQL.Add('where id_veiculo =  :idveiculo');
+  FDQuery1.ParamByName('id_veiculo').AsInteger := id_vei;
+
+  FDQuery1.Open();
+
+  iveiculo.id_veiculo := id_vei;
+  iveiculo.nome := FDQuery1.FieldByName('nome').AsString;
+  iveiculo.placa := FDQuery1.FieldByName('placa').AsString;
+
+  Result := iveiculo;
+end;
+
 procedure TfrmCadastro.Button1Click(Sender: TObject);
 begin
 TabControl1.TabIndex := 1;
@@ -236,6 +307,17 @@ end;
 procedure TfrmCadastro.Button4Click(Sender: TObject);
 begin
 TabControl1.TabIndex := 4;
+end;
+
+procedure TfrmCadastro.btn_salvar_veiculoClick(Sender: TObject);
+var Iveiculo : Tveiculo;
+begin
+  Iveiculo.id_veiculo := StrToInt(edt_cod_veiculo.Text);
+  Iveiculo.nome := edt_nome_veiculo.Text;
+  Iveiculo.placa := edt_placa_veiculo.Text;
+  TabControl1.TabIndex := 0;
+
+  insereVeiculoBD(Iveiculo);
 end;
 
 procedure TfrmCadastro.deleta_clientes(id_cliente: integer);
@@ -257,6 +339,34 @@ begin
     FDQuery1.SQL.Add('where codigo = :codigo');
     FDQuery1.ParamByName('codigo').AsInteger := id_usuario;
 
+end;
+
+procedure TfrmCadastro.atualizaCargaBanco;
+var vCarga : Tcarga;
+vTeste : string;
+begin
+  FDQuery1.Close;
+  FDQuery1.SQL.Clear;
+  FDQuery1.SQL.Add('select * from carga');
+
+  FDQuery1.Open();
+
+  FDQuery1.First;
+
+  ListViewcarga.Items.Clear;
+
+  while not FDQuery1.Eof do
+  begin
+
+  vCarga.viagem := FDQuery1.FieldByName('viagem').AsString;
+  vCarga.temperatura := FDQuery1.FieldByName('temperatura').AsString;
+  vCarga.veiculo := FDQuery1.FieldByName('veiculo').AsString;
+  vCarga.transportadora := FDQuery1.FieldByName('transportadora').AsString;
+  vCarga.status := FDQuery1.FieldByName('status').AsString;
+
+    insereCargaLista(vCarga);
+  FDQuery1.Next;
+  end;
 end;
 
 procedure TfrmCadastro.atualizaClientesBD;
@@ -312,6 +422,34 @@ begin
 
 end;
 
+procedure TfrmCadastro.atualizaVeiculos_bd;
+var iveiculo : Tveiculo;
+begin
+  FDQuery1.Close;
+  FDQuery1.SQL.Clear;
+  FDQuery1.SQL.Add('SELECT * FROM VEICULO');
+  FDQuery1.Open();
+
+  FDQuery1.First;
+
+  ListView2.Items.Clear;
+
+  while not FDQuery1.Eof do
+  begin
+    iveiculo.id_veiculo :=FDQuery1.FieldByName('id_veiculo').AsInteger;
+    iveiculo.nome := FDQuery1.FieldByName('nome').AsString;
+    iveiculo.placa := FDQuery1.FieldByName('placa').AsString;
+
+    insereVeiculoLista(iveiculo);
+    FDQuery1.Next;
+  end;
+end;
+
+procedure TfrmCadastro.btn_atualiza_cargaClick(Sender: TObject);
+begin
+       atualizaCargaBanco;
+end;
+
 procedure TfrmCadastro.btn_atualiza_clienteClick(Sender: TObject);
 begin
   atualizaClientesBD;
@@ -320,6 +458,24 @@ end;
 procedure TfrmCadastro.btn_atualiza_userClick(Sender: TObject);
 begin
 atualizaUsuariosBanco;
+end;
+
+procedure TfrmCadastro.btn_atualiza_veiculoClick(Sender: TObject);
+begin
+atualizaVeiculos_bd;
+end;
+
+procedure TfrmCadastro.btn_cadastro_cargaClick(Sender: TObject);
+var vCarga : Tcarga;
+begin
+  vCarga.viagem :=     edt_viagem.Text;
+  vCarga.veiculo := edt_veiculo.Text;
+  vCarga.transportadora := Edt_trans.Text;
+  vCarga.status := edt_status.Text;
+  vCarga.temperatura := edt_temp_carga.Text;
+
+  insereCargaBD(vCarga);
+        TabControl1.TabIndex := 0;
 end;
 
 procedure TfrmCadastro.btn_deletaClienteClick(Sender: TObject);
@@ -342,9 +498,19 @@ begin
   atualizaUsuariosBanco;
 end;
 
+procedure TfrmCadastro.btn_edita_cargaClick(Sender: TObject);
+begin
+TabControl1.TabIndex := 9;
+end;
+
 procedure TfrmCadastro.btn_edita_userClick(Sender: TObject);
 begin
 TabControl1.TabIndex := 8;
+end;
+
+procedure TfrmCadastro.btn_opt_veiculosClick(Sender: TObject);
+begin
+TabControl1.TabIndex := 10;
 end;
 
 procedure TfrmCadastro.btn_salvar_cad_userClick(Sender: TObject);
@@ -443,6 +609,35 @@ begin
 TabControl1.TabIndex := 5;
 end;
 
+procedure TfrmCadastro.insereCargaBD(carga: Tcarga);
+begin
+    FDQuery1.Close;
+    FDQuery1.SQL.Clear;
+    FDQuery1.SQL.Add('INSERT INTO CARGA (VIAGEM ,VEICULO, TRANSPORTADORA, STATUS, TEMPERATURA)');
+    FDQuery1.SQL.Add('VALUES (:VIAGEM, :VEICULO, :TRANSPORTADORA, :STATUS, :TEMPERATURA)');
+    FDQuery1.ParamByName('viagem').AsString := carga.viagem;
+    FDQuery1.ParamByName('veiculo').AsString := carga.veiculo;
+    FDQuery1.ParamByName('transportadora').AsString := carga.transportadora;
+    FDQuery1.ParamByName('status').AsString := carga.status;
+    FDQuery1.ParamByName('temperatura').AsString := carga.temperatura;
+
+    FDQuery1.ExecSQL;
+end;
+
+procedure TfrmCadastro.insereCargaLista(carga : Tcarga);
+begin
+  with ListViewcarga.Items.Add do
+  begin
+     TListItemText(Objects.FindDrawable('txtviagem')).Text := carga.viagem;
+     TListItemText(Objects.FindDrawable('txtveiculos')).Text := carga.veiculo;
+     TListItemText(Objects.FindDrawable('txttemperatura')).Text := carga.temperatura;
+     TListItemText(Objects.FindDrawable('txtstatus')).Text := carga.status;
+     TListItemText(Objects.FindDrawable('txttrans')).Text := carga.transportadora;
+
+  end;
+
+end;
+
 procedure TfrmCadastro.insereClienteBanco(cliente: TCliente);
 begin
   FDQuery1.Close;
@@ -482,6 +677,30 @@ begin
 
     TListItemImage(Objects.FindDrawable('imgedt_user')).Bitmap := Image_edt.Bitmap;
 
+  end;
+end;
+
+procedure TfrmCadastro.insereVeiculoBD(veiculo: Tveiculo);
+begin
+
+  FDQuery1.Close;
+  FDQuery1.SQL.Clear;
+  FDQuery1.SQL.Add('INSERT INTO VEICULO (ID_VEICULO, NOME , PLACA)');
+  FDQuery1.SQL.Add('VALUES (:ID_VEICULO, :NOME, :PLACA)');
+  FDQuery1.ParamByName('id_veiculo').AsInteger := veiculo.id_veiculo;
+  FDQuery1.ParamByName('nome').AsString := veiculo.nome;
+  FDQuery1.ParamByName('placa').AsString := veiculo.placa;
+  FDQuery1.ExecSQL;
+end;
+
+procedure TfrmCadastro.insereVeiculoLista(veiculo: Tveiculo);
+begin
+
+  with ListView2.Items.Add do
+  begin
+      TListItemText(Objects.FindDrawable('txtidveiculo')).Text := IntToStr(veiculo.id_veiculo);
+       TListItemText(Objects.FindDrawable('txtnomeveiculo')).Text := veiculo.nome;
+        TListItemText(Objects.FindDrawable('txtplaca')).Text := veiculo.placa;
   end;
 end;
 

@@ -1,7 +1,4 @@
-﻿[Edit18]
-Coordinates=593,366,51,58
-
-[Layout3]
+﻿[Layout3]
 Coordinates=853,638,60,36
 
 [edt_cod_cliente]
@@ -16,17 +13,11 @@ Coordinates=10,10,107,278
 [Label13]
 Coordinates=1152,298,60,58
 
-[Edit6]
-Coordinates=341,434,44,58
-
 [tab_cadastro_veiculo]
 Coordinates=563,638,136,36
 
 [Tab_cadastroCarga]
 Coordinates=425,638,128,36
-
-[Edit8]
-Coordinates=1046,366,44,58
 
 [Layout4]
 Coordinates=355,638,60,36
@@ -36,9 +27,6 @@ Coordinates=651,434,115,58
 
 [Label3]
 Coordinates=465,434,53,58
-
-[Edit17]
-Coordinates=369,10,51,58
 
 [edt_cliente]
 Coordinates=1068,10,77,58
@@ -78,12 +66,6 @@ Coordinates=136,502,59,58
 
 [FDConnection1]
 Coordinates=823,694,104,36
-
-[Edit19]
-Coordinates=280,434,51,58
-
-[Button7]
-Coordinates=582,434,59,58
 
 [Image_edt]
 Coordinates=1230,502,75,58
@@ -139,9 +121,6 @@ Coordinates=894,570,102,36
 [Label7]
 Coordinates=73,502,53,58
 
-[Edit7]
-Coordinates=385,366,44,58
-
 [Label8]
 Coordinates=10,434,53,58
 
@@ -166,14 +145,8 @@ Coordinates=589,570,99,36
 [Label16]
 Coordinates=395,434,60,58
 
-[Edit9]
-Coordinates=528,434,44,58
-
 [Button2]
 Coordinates=699,298,59,58
-
-[Edit5]
-Coordinates=1176,502,44,58
 
 [edt_senha_user]
 Coordinates=546,502,106,58
@@ -183,9 +156,6 @@ Coordinates=1063,502,103,58
 
 [edt_codigo_user]
 Coordinates=943,502,110,58
-
-[Button6]
-Coordinates=268,502,59,58
 
 [btn_voltar]
 Coordinates=839,434,71,58
@@ -250,4 +220,34 @@ Coordinates=918,10,140,58
 
 []
 Coordinates=80,298,115,58
+
+[btn_cadastro_carga]
+Coordinates=582,434,59,58
+
+[edt_viagem]
+Coordinates=1176,502,44,58
+
+[edt_veiculo]
+Coordinates=341,434,44,58
+
+[Edt_trans]
+Coordinates=385,366,44,58
+
+[edt_status]
+Coordinates=1046,366,44,58
+
+[edt_temp_carga]
+Coordinates=528,434,44,58
+
+[btn_salvar_veiculo]
+Coordinates=268,502,59,58
+
+[edt_cod_veiculo]
+Coordinates=369,10,51,58
+
+[edt_nome_veiculo]
+Coordinates=593,366,51,58
+
+[edt_placa_veiculo]
+Coordinates=280,434,51,58
 

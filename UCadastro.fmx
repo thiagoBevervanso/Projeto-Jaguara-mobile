@@ -36,10 +36,14 @@ object frmCadastro: TfrmCadastro
       Size.Height = 422.000000000000000000
       Size.PlatformDefault = False
       TabHeight = 49.000000000000000000
-      TabIndex = 0
+      TabIndex = 4
       TabOrder = 1
       TabPosition = None
       Sizes = (
+        294s
+        422s
+        294s
+        422s
         294s
         422s
         294s
@@ -62,7 +66,7 @@ object frmCadastro: TfrmCadastro
         CustomIcon = <
           item
           end>
-        IsSelected = True
+        IsSelected = False
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
@@ -335,7 +339,7 @@ object frmCadastro: TfrmCadastro
             Text = 'Viagem'
             TabOrder = 1
           end
-          object Edit5: TEdit
+          object edt_viagem: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Top
             TabOrder = 2
@@ -356,7 +360,7 @@ object frmCadastro: TfrmCadastro
             Text = 'Veiculo'
             TabOrder = 3
           end
-          object Edit6: TEdit
+          object edt_veiculo: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Top
             TabOrder = 4
@@ -377,7 +381,7 @@ object frmCadastro: TfrmCadastro
             Text = 'Transportadora'
             TabOrder = 5
           end
-          object Edit7: TEdit
+          object Edt_trans: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Top
             TabOrder = 6
@@ -398,7 +402,7 @@ object frmCadastro: TfrmCadastro
             Text = 'Status'
             TabOrder = 7
           end
-          object Edit8: TEdit
+          object edt_status: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Top
             TabOrder = 8
@@ -419,7 +423,7 @@ object frmCadastro: TfrmCadastro
             Text = 'Temperatura'
             TabOrder = 9
           end
-          object Edit9: TEdit
+          object edt_temp_carga: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Top
             TabOrder = 10
@@ -428,15 +432,15 @@ object frmCadastro: TfrmCadastro
             Size.Height = 32.000000000000000000
             Size.PlatformDefault = False
           end
-          object Button7: TButton
+          object btn_cadastro_carga: TButton
             Align = Top
             StyledSettings = [Family, FontColor]
-            Margins.Left = 50.000000000000000000
+            Margins.Left = 80.000000000000000000
             Margins.Top = 20.000000000000000000
             Margins.Right = 50.000000000000000000
-            Position.X = 50.000000000000000000
+            Position.X = 80.000000000000000000
             Position.Y = 328.000000000000000000
-            Size.Width = 194.000000000000000000
+            Size.Width = 164.000000000000000000
             Size.Height = 44.000000000000000000
             Size.PlatformDefault = False
             StyleLookup = 'btn_blue'
@@ -444,6 +448,12 @@ object frmCadastro: TfrmCadastro
             Text = 'Salvar'
             TextSettings.Font.Size = 16.000000000000000000
             TextSettings.Font.StyleExt = {00060000000000000004000000}
+            OnClick = btn_cadastro_cargaClick
+          end
+          object btn_edita_carga: TSpeedButton
+            Position.Y = 344.000000000000000000
+            StyleLookup = 'ellipseseditbutton'
+            OnClick = btn_edita_cargaClick
           end
         end
       end
@@ -574,7 +584,7 @@ object frmCadastro: TfrmCadastro
         CustomIcon = <
           item
           end>
-        IsSelected = False
+        IsSelected = True
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
@@ -613,7 +623,7 @@ object frmCadastro: TfrmCadastro
             Text = 'Codigo do veiculo:'
             TabOrder = 1
           end
-          object Edit17: TEdit
+          object edt_cod_veiculo: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Top
             TabOrder = 2
@@ -634,7 +644,7 @@ object frmCadastro: TfrmCadastro
             Text = 'Nome(modelo) do veiculo:'
             TabOrder = 3
           end
-          object Edit18: TEdit
+          object edt_nome_veiculo: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Top
             TabOrder = 4
@@ -656,7 +666,7 @@ object frmCadastro: TfrmCadastro
             Text = 'Placa:'
             TabOrder = 5
           end
-          object Edit19: TEdit
+          object edt_placa_veiculo: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Top
             TabOrder = 6
@@ -665,15 +675,15 @@ object frmCadastro: TfrmCadastro
             Size.Height = 32.000000000000000000
             Size.PlatformDefault = False
           end
-          object Button6: TButton
+          object btn_salvar_veiculo: TButton
             Align = Top
             StyledSettings = [Family, FontColor]
-            Margins.Left = 50.000000000000000000
+            Margins.Left = 70.000000000000000000
             Margins.Top = 60.000000000000000000
             Margins.Right = 50.000000000000000000
-            Position.X = 50.000000000000000000
+            Position.X = 70.000000000000000000
             Position.Y = 258.000000000000000000
-            Size.Width = 194.000000000000000000
+            Size.Width = 174.000000000000000000
             Size.Height = 44.000000000000000000
             Size.PlatformDefault = False
             StyleLookup = 'btn_blue'
@@ -681,6 +691,16 @@ object frmCadastro: TfrmCadastro
             Text = 'Salvar'
             TextSettings.Font.Size = 14.000000000000000000
             TextSettings.Font.StyleExt = {00060000000000000004000000}
+            OnClick = btn_salvar_veiculoClick
+          end
+          object btn_opt_veiculos: TSpeedButton
+            Position.X = 8.000000000000000000
+            Position.Y = 272.000000000000000000
+            Size.Width = 57.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'detailstoolbuttonbordered'
+            OnClick = btn_opt_veiculosClick
           end
         end
       end
@@ -1619,6 +1639,150 @@ object frmCadastro: TfrmCadastro
           Size.PlatformDefault = False
           StyleLookup = 'refreshtoolbutton'
           OnClick = btn_atualiza_userClick
+        end
+      end
+      object tab_view_cargas: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 8.000000000000000000
+        Size.Height = 8.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        ExplicitSize.cx = 8.000000000000000000
+        ExplicitSize.cy = 8.000000000000000000
+        object ListViewcarga: TListView
+          ItemAppearanceClassName = 'TDynamicAppearance'
+          ItemEditAppearanceClassName = 'TDynamicAppearance'
+          HeaderAppearanceClassName = 'TListHeaderObjects'
+          FooterAppearanceClassName = 'TListHeaderObjects'
+          Position.Y = 40.000000000000000000
+          Size.Width = 294.000000000000000000
+          Size.Height = 382.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          ItemAppearance.ItemHeight = 70
+          ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+            item
+              AppearanceObjectName = 'txtviagem'
+              AppearanceClassName = 'TTextObjectAppearance'
+              Appearance.Font.StyleExt = {00060000000000000004000000}
+              Appearance.Width = 60.000000000000000000
+              Appearance.Height = 30.000000000000000000
+            end
+            item
+              AppearanceObjectName = 'txttemperatura'
+              AppearanceClassName = 'TTextObjectAppearance'
+              Appearance.Font.StyleExt = {00060000000000000004000000}
+              Appearance.TextColor = claMaroon
+              Appearance.Width = 50.000000000000000000
+              Appearance.Height = 30.000000000000000000
+              Appearance.PlaceOffset.X = 224.000000000000000000
+              Appearance.PlaceOffset.Y = 40.000000000000000000
+            end
+            item
+              AppearanceObjectName = 'txtveiculos'
+              AppearanceClassName = 'TTextObjectAppearance'
+              Appearance.Font.StyleExt = {00060000000000000004000000}
+              Appearance.Width = 200.000000000000000000
+              Appearance.Height = 30.000000000000000000
+              Appearance.PlaceOffset.X = 72.000000000000000000
+            end
+            item
+              AppearanceObjectName = 'txtstatus'
+              AppearanceClassName = 'TTextObjectAppearance'
+              Appearance.Font.StyleExt = {00060000000000000004000000}
+              Appearance.Width = 80.000000000000000000
+              Appearance.Height = 30.000000000000000000
+              Appearance.PlaceOffset.X = 120.000000000000000000
+              Appearance.PlaceOffset.Y = 40.000000000000000000
+            end
+            item
+              AppearanceObjectName = 'txttrans'
+              AppearanceClassName = 'TTextObjectAppearance'
+              Appearance.Font.StyleExt = {00060000000000000004000000}
+              Appearance.Width = 100.000000000000000000
+              Appearance.Height = 30.000000000000000000
+              Appearance.PlaceOffset.X = 8.000000000000000000
+              Appearance.PlaceOffset.Y = 40.000000000000000000
+            end>
+          ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+            item
+              AppearanceObjectName = 'Text1'
+              AppearanceClassName = 'TTextObjectAppearance'
+            end>
+        end
+        object btn_atualiza_carga: TSpeedButton
+          Position.X = 232.000000000000000000
+          Position.Y = 10.000000000000000000
+          Size.Width = 62.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'refreshtoolbutton'
+          Text = 'refreshtoolbutton'
+          OnClick = btn_atualiza_cargaClick
+        end
+      end
+      object tab_view_veiculos: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 8.000000000000000000
+        Size.Height = 8.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        ExplicitSize.cx = 8.000000000000000000
+        ExplicitSize.cy = 8.000000000000000000
+        object ListView2: TListView
+          ItemAppearanceClassName = 'TDynamicAppearance'
+          ItemEditAppearanceClassName = 'TDynamicAppearance'
+          HeaderAppearanceClassName = 'TListHeaderObjects'
+          FooterAppearanceClassName = 'TListHeaderObjects'
+          Position.Y = 40.000000000000000000
+          Size.Width = 294.000000000000000000
+          Size.Height = 382.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          ItemAppearance.ItemHeight = 60
+          ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+            item
+              AppearanceObjectName = 'txtidveiculo'
+              AppearanceClassName = 'TTextObjectAppearance'
+              Appearance.Font.StyleExt = {00060000000000000004000000}
+              Appearance.Width = 50.000000000000000000
+              Appearance.Height = 30.000000000000000000
+            end
+            item
+              AppearanceObjectName = 'txtnomeveiculo'
+              AppearanceClassName = 'TTextObjectAppearance'
+              Appearance.Font.StyleExt = {00060000000000000004000000}
+              Appearance.Width = 200.000000000000000000
+              Appearance.Height = 30.000000000000000000
+              Appearance.PlaceOffset.X = 56.000000000000000000
+            end
+            item
+              AppearanceObjectName = 'txtplaca'
+              AppearanceClassName = 'TTextObjectAppearance'
+              Appearance.Font.StyleExt = {00060000000000000004000000}
+              Appearance.Width = 70.000000000000000000
+              Appearance.Height = 30.000000000000000000
+              Appearance.PlaceOffset.Y = 32.000000000000000000
+            end>
+          ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+            item
+              AppearanceObjectName = 'Text1'
+              AppearanceClassName = 'TTextObjectAppearance'
+            end>
+        end
+        object btn_atualiza_veiculo: TSpeedButton
+          Position.X = 214.000000000000000000
+          Position.Y = 10.000000000000000000
+          StyleLookup = 'refreshtoolbutton'
+          OnClick = btn_atualiza_veiculoClick
         end
       end
     end

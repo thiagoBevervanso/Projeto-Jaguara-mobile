@@ -13,7 +13,7 @@ uses
   FireDAC.Stan.ExprFuncs, FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.FMXUI.Wait,
   Data.DB, FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS,
   FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet, FMX.Edit,UCadastro,
-  FMX.ListBox, System.ImageList, FMX.ImgList, FMX.Objects;
+  FMX.ListBox, System.ImageList, FMX.ImgList, FMX.Objects, FMX.Effects;
 
 type
 
@@ -53,10 +53,20 @@ type
     btn_att_veiculo: TSpeedButton;
     Label5: TLabel;
     Tab_graficos: TTabItem;
-    Image1: TImage;
+    btn_grafico: TButton;
+    Rectangle1: TRectangle;
+    Layout_chart1: TLayout;
+    btn_refresh: TSpeedButton;
+    Circle1: TCircle;
+    Circle2: TCircle;
+    Circle3: TCircle;
+    ShadowEffect1: TShadowEffect;
+    ShadowEffect2: TShadowEffect;
+    ShadowEffect3: TShadowEffect;
     Label6: TLabel;
     Label7: TLabel;
-    btn_grafico: TButton;
+    Label8: TLabel;
+    Button1: TButton;
     procedure btn_voltarClick(Sender: TObject);
     procedure btn_gridClick(Sender: TObject);
 
@@ -73,7 +83,13 @@ type
     procedure insereVeiculos();
     procedure btn_att_veiculoClick(Sender: TObject);
     procedure btn_graficoClick(Sender: TObject);
+    procedure btn_refreshClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+   
+
+
   private
+
 
     { Private declarations }
 
@@ -89,7 +105,9 @@ type
 var
   frm_btns: Tfrm_btns;
 
-
+ type TcircleHelper = class Helper for Tcircle
+  procedure graficoPizza(valor,cor : Integer);
+ end;
 implementation
 
 {$R *.fmx}
@@ -125,14 +143,25 @@ begin
 end;
 
 
+
+
 procedure Tfrm_btns.btn_graficoClick(Sender: TObject);
 begin
 TabControl1.TabIndex := 5;
+
 end;
 
 procedure Tfrm_btns.btn_gridClick(Sender: TObject);
 begin
   TabControl1.TabIndex := 1;
+end;
+
+
+
+
+procedure Tfrm_btns.btn_refreshClick(Sender: TObject);
+begin
+///////////////////////////////
 end;
 
 procedure Tfrm_btns.btn_solicitacoesClick(Sender: TObject);
@@ -153,6 +182,15 @@ end;
 procedure Tfrm_btns.btn_voltarClick(Sender: TObject);
 begin
   TabControl1.TabIndex := 0;
+end;
+
+
+
+procedure Tfrm_btns.Button1Click(Sender: TObject);
+begin
+   Circle1.graficoPizza(30,TAlphaColors.Aqua);
+   Circle2.graficoPizza(50,TAlphaColors.Blueviolet);
+   Circle3.graficoPizza(90,TAlphaColors.Aqua);
 end;
 
 procedure Tfrm_btns.insereLista_grid;
@@ -356,6 +394,31 @@ begin
 
 
 
+end;
+
+
+
+{ TcircleHelper }
+
+procedure TcircleHelper.graficoPizza(valor, cor: Integer);
+var
+  Pie : Tpie;
+
+begin
+  Self.Stroke.Color := Self.Fill.Color;
+//
+  Pie := Tpie.Create(Self);
+  Pie.Parent := Self;
+  Pie.Align := TAlignLayout.Client;
+  Pie.Fill.Color := cor;
+  Pie.Stroke.Color := cor;
+  Pie.StartAngle := 0;
+  Pie.RotationAngle := -90;
+  Pie.EndAngle := valor * 3.6;
+
+
+
+  Pie.AnimateFloat('StartAngle',valor *3.6,1,TAnimationType.in,TInterpolationType.Circular);
 end;
 
 end.
